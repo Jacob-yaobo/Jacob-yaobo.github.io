@@ -1,4 +1,4 @@
-baseURL: "https://YOUR-DOMAIN.com/"   # ← 换成你的域名
+baseURL: "https://jacob-yaobo.github.io/"
 languageCode: "en"
 title: "Xue Lab | Medical University of Vienna"
 
@@ -33,7 +33,7 @@ params:
   description: "AI-driven Medical Imaging Research"
   lab_name: "Xue Lab"
   university: "Division of Nuclear Medicine, Medical University of Vienna"
-  github: "https://github.com/your-org"
+  github: "https://github.com/Jacob-yaobo/Jacob-yaobo.github.io"
   email: "song.xue@meduniwien.ac.at"
 
 markup:
