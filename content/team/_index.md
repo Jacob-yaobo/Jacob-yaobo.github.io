@@ -4,6 +4,6 @@ collaborators:
   - name: "Qianling Ye"
     photo: "/images/team/qianling-ye.jpg"
     role: "Ph.D Student"
-  - name: "Tutu Hu"
+  - name: "Chenming Hu"
     role: "Ph.D Student"
 ---
