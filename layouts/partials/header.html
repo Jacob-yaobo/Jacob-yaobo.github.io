@@ -1,8 +1,11 @@
 <header class="site-header">
   <nav class="nav-container">
-    <a href="{{ "/" | relURL }}" class="nav-logo">
-      <span class="logo-icon">◈</span>
-      <span>{{ .Site.Params.lab_name }}</span>
+    <a href="{{ "/" | relURL }}" class="nav-logo" aria-label="{{ .Site.Params.lab_name }}">
+      <img src="{{ "images/branding/logo-m.png" | relURL }}" alt="" class="nav-logo-wordmark">
+      <span class="nav-logo-compact">
+        <img src="{{ "images/branding/logo-s.png" | relURL }}" alt="" class="nav-logo-mark">
+        <span class="nav-logo-label">{{ .Site.Params.lab_name }}</span>
+      </span>
     </a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
       <span></span><span></span><span></span>
