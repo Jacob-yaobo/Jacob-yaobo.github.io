@@ -109,7 +109,7 @@ img { max-width: 100%; display: block; }
 .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
 .team-subsection { margin-top: 3rem; }
 .team-subsection-title { margin-bottom: 1.5rem; text-align: left; }
-.collaborator-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
+.collaborator-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 .team-card { text-align: center; padding: 1.5rem; border: 1px solid var(--c-border); border-radius: var(--radius); background: white; }
 .team-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; }
 .team-photo-placeholder {
