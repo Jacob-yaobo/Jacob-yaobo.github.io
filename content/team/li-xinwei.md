@@ -1,5 +1,5 @@
 ---
-title: "Li Xinwei"
-role: "Team Member"
+title: "Xinwei Li"
+role: "Ph.D Student"
 weight: 5
 ---

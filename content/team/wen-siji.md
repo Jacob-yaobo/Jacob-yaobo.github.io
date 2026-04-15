@@ -1,5 +1,5 @@
 ---
-title: "Wen Siji"
-role: "Team Member"
+title: "Siji Wen"
+role: "Ph.D Student"
 weight: 3
 ---

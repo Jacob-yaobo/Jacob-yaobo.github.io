@@ -1,5 +1,5 @@
 ---
-title: "Wang Zeyang"
-role: "Team Member"
+title: "Zeyang Wang"
+role: "Ph.D Student"
 weight: 4
 ---
