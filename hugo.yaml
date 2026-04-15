@@ -1,6 +1,6 @@
-baseURL: "https://jacob-yaobo.github.io/"
+baseURL: "https://monster-lab.org/"
 languageCode: "en"
-title: "Xue Lab | Medical University of Vienna"
+title: "MONSTER Lab | Medical University of Vienna"
 
 pagination:
   pagerSize: 10
@@ -31,7 +31,7 @@ menu:
 
 params:
   description: "AI-driven Medical Imaging Research"
-  lab_name: "Xue Lab"
+  lab_name: "MONSTER Lab"
   university: "Division of Nuclear Medicine, Medical University of Vienna"
   github: "https://github.com/Jacob-yaobo/Jacob-yaobo.github.io"
   email: "song.xue@meduniwien.ac.at"
