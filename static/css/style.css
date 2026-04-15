@@ -37,17 +37,10 @@ img { max-width: 100%; display: block; }
 }
 .nav-container {
   max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem;
-  display: flex; align-items: center; justify-content: space-between; height: 76px;
+  display: flex; align-items: center; justify-content: space-between; height: 64px;
 }
-.nav-logo { display: flex; align-items: center; color: var(--c-text); text-decoration: none; min-width: 0; }
-.nav-logo:hover { text-decoration: none; }
-.nav-logo-wordmark { display: block; height: 42px; width: auto; }
-.nav-logo-compact { display: none; align-items: center; gap: 0.65rem; }
-.nav-logo-mark { display: block; height: 36px; width: auto; }
-.nav-logo-label {
-  font-weight: 700; font-size: 1rem; letter-spacing: -0.02em;
-  color: var(--c-text); white-space: nowrap;
-}
+.nav-logo { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.1rem; color: var(--c-text); text-decoration: none; }
+.logo-icon { color: var(--c-primary); font-size: 1.3rem; }
 .nav-links { display: flex; gap: 0.25rem; }
 .nav-link {
   padding: 0.4rem 0.75rem; border-radius: 6px; font-size: 0.9rem; font-weight: 500;
@@ -181,14 +174,9 @@ img { max-width: 100%; display: block; }
 /* === Mobile === */
 @media (max-width: 768px) {
   .hero-title { font-size: 2rem; }
-  .nav-container { height: 68px; }
-  .nav-logo-wordmark { display: none; }
-  .nav-logo-compact { display: flex; }
-  .nav-logo-mark { height: 32px; }
-  .nav-logo-label { font-size: 0.95rem; }
   .nav-toggle { display: block; }
   .nav-links {
-    display: none; position: absolute; top: 68px; left: 0; right: 0;
+    display: none; position: absolute; top: 64px; left: 0; right: 0;
     background: white; border-bottom: 1px solid var(--c-border);
     flex-direction: column; padding: 0.5rem 1rem;
   }
