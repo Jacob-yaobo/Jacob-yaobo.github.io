@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="section page-section">
+  <div class="container">
+    <h1 class="page-title">Publications</h1>
+    {{ .Content }}
+    <div class="pub-list">
+      {{ range .Pages.ByDate.Reverse }}
+      <div class="pub-item">
+        <span class="pub-year">{{ .Date.Format "2006" }}</span>
+        <div class="pub-detail">
+          <h3>{{ .Title }}</h3>
+          {{ if .Params.authors }}<p class="pub-authors">{{ .Params.authors }}</p>{{ end }}
+          {{ if .Params.venue }}<p class="pub-venue">{{ .Params.venue }}</p>{{ end }}
+          <div class="pub-links">
+            {{ if .Params.doi }}<a href="https://doi.org/{{ .Params.doi }}" target="_blank">DOI</a>{{ end }}
+            {{ if .Params.pdf }}<a href="{{ .Params.pdf }}" target="_blank">PDF</a>{{ end }}
+            {{ if .Params.code }}<a href="{{ .Params.code }}" target="_blank">Code</a>{{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

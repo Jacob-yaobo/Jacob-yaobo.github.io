@@ -1,0 +1,11 @@
+- title: "Dual-Tracer PET/CT"
+  icon: "🔬"
+  description: "Combining PSMA-PET and FDG-PET for comprehensive tumor characterization, enabling multi-dimensional lesion analysis in prostate and lung cancers."
+
+- title: "AI-Driven Medical Imaging"
+  icon: "🧠"
+  description: "Developing deep learning pipelines (nnUNet, GNN) for automated lesion segmentation, classification, and prognostic modeling from PET/CT data."
+
+- title: "Longitudinal Lesion Tracking"
+  icon: "📊"
+  description: "Building patient-level lesion tracking systems to monitor treatment response and disease progression across serial imaging studies."

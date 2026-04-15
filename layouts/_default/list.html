@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="section page-section">
+  <div class="container">
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ .Content }}
+    <div class="post-list">
+      {{ range .Pages }}
+      <article class="post-card">
+        {{ if .Date }}<time class="post-date">{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        {{ if .Params.summary }}<p>{{ .Params.summary }}</p>
+        {{ else }}<p>{{ .Summary | truncate 150 }}</p>{{ end }}
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

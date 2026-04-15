@@ -1,0 +1,48 @@
+{{ define "main" }}
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-badge">{{ .Site.Params.university }}</div>
+    <h1 class="hero-title">{{ .Site.Params.lab_name }}</h1>
+    <p class="hero-subtitle">{{ .Site.Params.description }}</p>
+    <div class="hero-actions">
+      <a href="#research" class="btn btn-primary">Our Research</a>
+      <a href="/tools/" class="btn btn-outline">Tools & Applications</a>
+    </div>
+  </div>
+</section>
+
+<!-- Research Section -->
+<section id="research" class="section">
+  <div class="container">
+    <h2 class="section-title">Research Focus</h2>
+    <div class="card-grid">
+      {{ range .Site.Data.research }}
+      <div class="card">
+        <div class="card-icon">{{ .icon }}</div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Latest News -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Latest News</h2>
+    <div class="post-list">
+      {{ range first 3 (where .Site.RegularPages "Section" "posts") }}
+      <article class="post-card">
+        <time class="post-date">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Summary | truncate 120 }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}

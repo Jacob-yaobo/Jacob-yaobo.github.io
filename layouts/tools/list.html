@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="section page-section">
+  <div class="container">
+    <h1 class="page-title">Tools & Applications</h1>
+    <p class="page-desc">Research tools and applications developed by our lab.</p>
+    {{ .Content }}
+    <div class="tools-grid">
+      {{ range .Pages }}
+      <a href="{{ if .Params.url }}{{ .Params.url }}{{ else }}{{ .Permalink }}{{ end }}" 
+         class="tool-card" {{ if .Params.url }}target="_blank"{{ end }}>
+        <div class="tool-icon">{{ .Params.icon | default "🔬" }}</div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Params.summary | default .Summary }}</p>
+        {{ if .Params.status }}<span class="tool-status status-{{ .Params.status }}">{{ .Params.status }}</span>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
