@@ -107,6 +107,9 @@ img { max-width: 100%; display: block; }
 
 /* === Team === */
 .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
+.team-subsection { margin-top: 3rem; }
+.team-subsection-title { margin-bottom: 1.5rem; text-align: left; }
+.collaborator-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
 .team-card { text-align: center; padding: 1.5rem; border: 1px solid var(--c-border); border-radius: var(--radius); background: white; }
 .team-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; }
 .team-photo-placeholder {
@@ -181,6 +184,7 @@ img { max-width: 100%; display: block; }
   .nav-link { padding: 0.6rem 0.75rem; }
   .card-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .collaborator-grid { grid-template-columns: repeat(2, 1fr); }
   .pub-item { grid-template-columns: 1fr; }
   .pub-year { font-weight: 600; }
 }
