@@ -13,7 +13,18 @@
         {{ end }}
         <h3>{{ .Title }}</h3>
         <p class="team-role">{{ .Params.role }}</p>
-        {{ if .Params.email }}<p class="team-email"><a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></p>{{ end }}
+        {{ $emails := .Params.emails | default (slice) }}
+        {{ if and (eq (len $emails) 0) .Params.email }}
+        {{ $emails = slice .Params.email }}
+        {{ end }}
+        {{ if gt (len $emails) 0 }}
+        <p class="team-email">
+          {{ range $index, $email := $emails }}
+          {{ if gt $index 0 }}<br>{{ end }}
+          <a href="mailto:{{ $email }}">{{ $email }}</a>
+          {{ end }}
+        </p>
+        {{ end }}
       </div>
       {{ end }}
     </div>
@@ -30,7 +41,18 @@
           {{ end }}
           <h3>{{ .name }}</h3>
           <p class="team-role">{{ .role | default "Collaborator" }}</p>
-          {{ if .email }}<p class="team-email"><a href="mailto:{{ .email }}">{{ .email }}</a></p>{{ end }}
+          {{ $emails := .emails | default (slice) }}
+          {{ if and (eq (len $emails) 0) .email }}
+          {{ $emails = slice .email }}
+          {{ end }}
+          {{ if gt (len $emails) 0 }}
+          <p class="team-email">
+            {{ range $index, $email := $emails }}
+            {{ if gt $index 0 }}<br>{{ end }}
+            <a href="mailto:{{ $email }}">{{ $email }}</a>
+            {{ end }}
+          </p>
+          {{ end }}
         </div>
         {{ end }}
       </div>

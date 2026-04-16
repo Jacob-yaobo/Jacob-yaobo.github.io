@@ -64,7 +64,10 @@ Create `content/team/firstname-lastname.md`:
 ---
 title: "Name"
 role: "PhD Student"
-email: "name@meduniwien.ac.at"
+email: "name@meduniwien.ac.at"  # use `emails` instead if there are multiple addresses
+# emails:
+#   - "name@meduniwien.ac.at"
+#   - "name@students.meduniwien.ac.at"
 photo: "/img/name.jpg"   # optional, put image in static/img/
 weight: 3                 # controls display order
 ---

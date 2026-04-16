@@ -111,7 +111,7 @@ img { max-width: 100%; display: block; }
 .team-subsection { margin-top: 3rem; }
 .team-subsection-title { margin-bottom: 1.5rem; text-align: left; }
 .collaborator-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
-.team-card { text-align: center; padding: 1.5rem; border: 1px solid var(--c-border); border-radius: var(--radius); background: white; }
+.team-card { text-align: center; padding: 1.5rem; border: 1px solid var(--c-border); border-radius: var(--radius); background: white; min-width: 0; }
 .team-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; }
 .team-photo-placeholder {
   width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 1rem;
@@ -120,7 +120,19 @@ img { max-width: 100%; display: block; }
 }
 .team-card h3 { font-size: 1rem; margin-bottom: 0.25rem; }
 .team-role { font-size: 0.85rem; color: var(--c-text-muted); margin-bottom: 0.25rem; }
-.team-email { font-size: 0.8rem; }
+.team-email {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.team-email a {
+  display: inline-block;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 
 /* === Publications === */
 .pub-venues {
