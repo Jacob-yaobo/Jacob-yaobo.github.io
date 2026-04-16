@@ -123,6 +123,60 @@ img { max-width: 100%; display: block; }
 .team-email { font-size: 0.8rem; }
 
 /* === Publications === */
+.pub-venues {
+  margin: 1.75rem 0 2.25rem;
+}
+.pub-venues-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.9rem;
+  align-items: stretch;
+}
+.journal-card {
+  --journal-shift: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 0.85rem;
+  min-height: 72px;
+  border: 1px solid rgba(0, 60, 113, 0.08);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0, 60, 113, 0.07);
+  transform: translateY(var(--journal-shift));
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  overflow: hidden;
+}
+.journal-card--hero { grid-column: span 5; min-height: 96px; }
+.journal-card--wide { grid-column: span 4; min-height: 82px; }
+.journal-card--medium { grid-column: span 3; }
+.journal-card--compact { grid-column: span 2; }
+.journal-card:hover {
+  transform: translateY(calc(var(--journal-shift) - 4px));
+  box-shadow: 0 18px 36px rgba(0, 60, 113, 0.12);
+}
+.journal-card img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 56px;
+  object-fit: contain;
+}
+.journal-card--hero img { max-height: 72px; }
+.journal-card--wide img { max-height: 62px; }
+.journal-card--compact img { max-height: 42px; }
+
+@media (min-width: 769px) {
+  .journal-card:nth-child(1) { --journal-shift: 8px; }
+  .journal-card:nth-child(2) { --journal-shift: 30px; }
+  .journal-card:nth-child(3) { --journal-shift: 18px; }
+  .journal-card:nth-child(4) { --journal-shift: -6px; }
+  .journal-card:nth-child(5) { --journal-shift: -10px; }
+  .journal-card:nth-child(6) { --journal-shift: 10px; }
+  .journal-card:nth-child(7) { --journal-shift: 18px; }
+  .journal-card:nth-child(8) { --journal-shift: -14px; }
+}
+
 .pub-list { display: grid; gap: 1rem; }
 .pub-item {
   display: grid; grid-template-columns: 60px 1fr; gap: 1rem;
@@ -166,7 +220,30 @@ img { max-width: 100%; display: block; }
 /* === Footer === */
 .site-footer { padding: 3rem 0; border-top: 1px solid var(--c-border); background: var(--c-surface); }
 .footer-container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; text-align: center; }
-.footer-lab { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.25rem; }
+.footer-brand {
+  margin: 0 auto 1.5rem; display: flex; flex-direction: column;
+  align-items: center; gap: 1rem;
+}
+.footer-brand-home { display: inline-flex; align-items: center; justify-content: center; }
+.footer-brand-home:hover { text-decoration: none; }
+.footer-brand-logo { width: min(100%, 360px); height: auto; }
+.footer-brand-affiliations {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1rem; flex-wrap: wrap;
+}
+.footer-affiliation-link {
+  width: min(100%, 240px); min-height: 72px; padding: 0.55rem 0.7rem;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.72); border: 1px solid rgba(0,60,113,0.09);
+  border-radius: 12px; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.footer-affiliation-link:hover {
+  text-decoration: none; transform: translateY(-1px);
+  border-color: rgba(0,60,113,0.18); box-shadow: 0 10px 22px rgba(0,60,113,0.08);
+}
+.footer-affiliation-logo { width: auto; max-width: 100%; height: auto; }
+.footer-affiliation-logo-akh { width: min(100%, 204px); }
+.footer-affiliation-logo-meduni { width: min(100%, 184px); }
 .footer-container p { font-size: 0.88rem; color: var(--c-text-muted); margin-bottom: 0.25rem; }
 .footer-links { margin: 1rem 0; display: flex; gap: 1rem; justify-content: center; }
 .footer-links a { font-size: 0.88rem; font-weight: 600; }
@@ -175,6 +252,10 @@ img { max-width: 100%; display: block; }
 /* === Mobile === */
 @media (max-width: 768px) {
   .hero-title { font-size: 2rem; }
+  .footer-brand-logo { width: min(100%, 300px); }
+  .footer-affiliation-link { width: min(100%, 300px); min-height: 66px; padding: 0.5rem 0.65rem; }
+  .footer-affiliation-logo-akh { width: min(100%, 218px); }
+  .footer-affiliation-logo-meduni { width: min(100%, 194px); }
   .nav-container { height: 64px; }
   .nav-logo-wordmark { height: 32px; max-width: min(260px, 62vw); }
   .nav-toggle { display: block; }
@@ -188,6 +269,21 @@ img { max-width: 100%; display: block; }
   .card-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .collaborator-grid { grid-template-columns: repeat(2, 1fr); }
+  .pub-venues-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .journal-card { --journal-shift: 0px; }
+  .journal-card--hero,
+  .journal-card--wide { grid-column: span 6; }
+  .journal-card--medium { grid-column: span 3; }
+  .journal-card--compact { grid-column: span 2; }
   .pub-item { grid-template-columns: 1fr; }
   .pub-year { font-weight: 600; }
+}
+
+@media (max-width: 560px) {
+  .pub-venues-grid { grid-template-columns: 1fr; }
+  .journal-card--hero,
+  .journal-card--wide,
+  .journal-card--medium,
+  .journal-card--compact { grid-column: span 1; }
+  .journal-card { min-height: 72px; }
 }

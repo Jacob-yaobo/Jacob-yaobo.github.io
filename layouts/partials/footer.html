@@ -1,7 +1,19 @@
 <footer class="site-footer">
   <div class="footer-container">
+    <div class="footer-brand" aria-label="Site and institutional logos">
+      <a href="{{ "/" | relURL }}" class="footer-brand-home" aria-label="{{ .Site.Params.lab_name }}">
+        <img src="{{ "images/branding/logo-m.png" | relURL }}" alt="{{ .Site.Params.lab_name }}" class="footer-brand-logo">
+      </a>
+      <div class="footer-brand-affiliations" aria-label="Institutional affiliations">
+        <a href="https://www.akhwien.at" target="_blank" rel="noreferrer" class="footer-affiliation-link" aria-label="AKH Wien">
+          <img src="{{ "images/branding/akh-wien.png" | relURL }}" alt="AKH Wien" class="footer-affiliation-logo footer-affiliation-logo-akh">
+        </a>
+        <a href="https://www.meduniwien.ac.at/web/en/" target="_blank" rel="noreferrer" class="footer-affiliation-link" aria-label="Medical University of Vienna">
+          <img src="{{ "images/branding/meduni-vienna.svg" | relURL }}" alt="Medical University of Vienna" class="footer-affiliation-logo footer-affiliation-logo-meduni">
+        </a>
+      </div>
+    </div>
     <div class="footer-info">
-      <p class="footer-lab">{{ .Site.Params.lab_name }}</p>
       <p>{{ .Site.Params.university }}</p>
       <p><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
     </div>
