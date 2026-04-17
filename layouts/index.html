@@ -20,7 +20,7 @@
       <h2 class="section-title">Research Focus</h2>
     </div>
     <div class="card-grid">
-      {{ range hugo.Data.research }}
+      {{ range .Site.Data.research }}
       {{ if .url }}<a href="{{ .url }}" class="card card-link">{{ else }}<div class="card">{{ end }}
         <div class="card-icon">{{ .icon }}</div>
         <h3>{{ .title }}</h3>
