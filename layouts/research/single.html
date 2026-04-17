@@ -1,0 +1,168 @@
+{{ define "main" }}
+<section class="section page-section research-detail-shell">
+  <div class="container">
+    <div class="research-breadcrumbs">
+      <a href="/#research">Home Research</a>
+      <span>/</span>
+      <span>{{ .Title }}</span>
+    </div>
+
+    <div class="research-hero-panel">
+      <div class="research-hero-copy">
+        {{ with .Params.hero_badge }}<div class="hero-badge research-badge">{{ . }}</div>{{ end }}
+        <h1 class="page-title research-title">{{ .Title }}</h1>
+        {{ with .Params.summary }}<p class="research-summary">{{ . }}</p>{{ end }}
+        {{ with .Params.lead }}<p class="research-lead">{{ . }}</p>{{ end }}
+      </div>
+
+      <div class="research-hero-visual">
+        {{ with .Params.highlights }}
+        <div class="research-highlight-grid">
+          {{ range . }}
+          <div class="research-highlight-card">
+            <div class="research-highlight-value">{{ .value }}</div>
+            <div class="research-highlight-label">{{ .label }}</div>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{ with .Params.workflow }}
+        <div class="research-mini-flow">
+          {{ range . }}
+          <div class="research-mini-node">
+            <div class="research-mini-step">{{ .step }}</div>
+            <div class="research-mini-title">{{ .title }}</div>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ with .Params.workflow }}
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head-stack">
+      <div>
+        <h2 class="section-title section-title-left">Discovery Flow</h2>
+        <p class="page-desc research-section-desc">A stage-based map of how AIDD modules can move from target understanding to decision-ready candidate packages.</p>
+      </div>
+    </div>
+    <div class="research-flow-track">
+      {{ range . }}
+      <article class="research-stage-card">
+        <div class="research-stage-step">{{ .step }}</div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+        {{ with .bullets }}
+        <ul>
+          {{ range . }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+        {{ end }}
+        {{ with .output }}
+        <div class="research-stage-output">
+          <span>Output</span>
+          <strong>{{ . }}</strong>
+        </div>
+        {{ end }}
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.module_groups }}
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head section-head-stack">
+      <div>
+        <h2 class="section-title section-title-left">Module Architecture</h2>
+        <p class="page-desc research-section-desc">The workflow can be read as stacked module layers: target intelligence, molecule design, and optimization-to-translation.</p>
+      </div>
+    </div>
+    <div class="research-module-grid">
+      {{ range . }}
+      <article class="research-module-card">
+        {{ with .eyebrow }}<div class="research-module-eyebrow">{{ . }}</div>{{ end }}
+        <h3>{{ .title }}</h3>
+        {{ with .description }}<p>{{ . }}</p>{{ end }}
+        {{ with .items }}
+        <ul class="research-module-list">
+          {{ range . }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.loop }}
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head-stack">
+      <div>
+        <h2 class="section-title section-title-left">Dry-Lab / Wet-Lab Loop</h2>
+        <p class="page-desc research-section-desc">The pipeline is not linear. Computational prioritization and experimental readout keep updating each other.</p>
+      </div>
+    </div>
+    <div class="research-loop-shell">
+      <article class="research-loop-card">
+        <div class="research-loop-label">Dry Lab</div>
+        <h3>{{ .dry_lab.title }}</h3>
+        <ul class="research-loop-list">
+          {{ range .dry_lab.items }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </article>
+      <article class="research-loop-bridge">
+        <div class="research-loop-core">{{ .bridge.title }}</div>
+        <p>{{ .bridge.description }}</p>
+      </article>
+      <article class="research-loop-card">
+        <div class="research-loop-label">Wet Lab</div>
+        <h3>{{ .wet_lab.title }}</h3>
+        <ul class="research-loop-list">
+          {{ range .wet_lab.items }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.principles }}
+<section class="section section-alt">
+  <div class="container container-narrow">
+    <div class="research-principles">
+      <h2 class="section-title section-title-left">Working Principles</h2>
+      <div class="research-principle-list">
+        {{ range . }}
+        <div class="research-principle-pill">{{ . }}</div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="section page-section">
+  <div class="container container-narrow">
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+{{ end }}

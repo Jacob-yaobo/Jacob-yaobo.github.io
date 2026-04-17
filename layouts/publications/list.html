@@ -3,6 +3,30 @@
   <div class="container">
     <h1 class="page-title">Publications</h1>
     {{ .Content }}
+
+    <!-- Journal logos banner -->
+    <div class="pub-venues">
+      <div class="pub-venues-grid">
+        <div class="journal-card journal-card--hero">
+          <img src="/images/journals/ejnmmi.svg" alt="European Journal of Nuclear Medicine and Molecular Imaging">
+        </div>
+        <div class="journal-card journal-card--wide">
+          <img src="/images/journals/jnm.svg" alt="Journal of Nuclear Medicine">
+        </div>
+        <div class="journal-card journal-card--medium">
+          <img src="/images/journals/jacc.svg" alt="Journal of the American College of Cardiology">
+        </div>
+        <div class="journal-card journal-card--wide">
+          <img src="/images/journals/jaha.svg" alt="Journal of the American Heart Association">
+        </div>
+        <div class="journal-card journal-card--wide">
+          <img src="/images/journals/european-radiology.svg" alt="European Radiology">
+        </div>
+        <div class="journal-card journal-card--wide">
+          <img src="/images/journals/nuklearmedizin.svg" alt="Nuklearmedizin">
+        </div>
+      </div>
+    </div>
     <div class="pub-list">
       {{ range .Pages.ByDate.Reverse }}
       <div class="pub-item">

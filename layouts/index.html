@@ -16,14 +16,17 @@
 <!-- Research Section -->
 <section id="research" class="section">
   <div class="container">
-    <h2 class="section-title">Research Focus</h2>
+    <div class="section-head">
+      <h2 class="section-title">Research Focus</h2>
+    </div>
     <div class="card-grid">
-      {{ range .Site.Data.research }}
-      <div class="card">
+      {{ range hugo.Data.research }}
+      {{ if .url }}<a href="{{ .url }}" class="card card-link">{{ else }}<div class="card">{{ end }}
         <div class="card-icon">{{ .icon }}</div>
         <h3>{{ .title }}</h3>
         <p>{{ .description }}</p>
-      </div>
+        {{ if .url }}<span class="card-cta">Explore</span>{{ end }}
+      {{ if .url }}</a>{{ else }}</div>{{ end }}
       {{ end }}
     </div>
   </div>

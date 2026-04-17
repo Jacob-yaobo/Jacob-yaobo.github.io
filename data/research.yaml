@@ -9,3 +9,8 @@
 - title: "Longitudinal Lesion Tracking"
   icon: "📊"
   description: "Building patient-level lesion tracking systems to monitor treatment response and disease progression across serial imaging studies."
+
+- title: "AI-Driven Drug Discovery"
+  icon: "🧬"
+  description: "AIDD research focused on target understanding, hit discovery, lead optimization, and experiment-guided preclinical translation."
+  url: "/research/aidd/"

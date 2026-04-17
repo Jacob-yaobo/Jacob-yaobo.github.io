@@ -8,7 +8,9 @@
     </button>
     <div class="nav-links">
       {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}" class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}">{{ .Name }}</a>
+        {{ $isResearchActive := and (eq .Name "Research") (eq $.Section "research") }}
+        {{ $isActive := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) $isResearchActive }}
+        <a href="{{ .URL }}" class="nav-link{{ if $isActive }} active{{ end }}">{{ .Name }}</a>
       {{ end }}
     </div>
   </nav>
