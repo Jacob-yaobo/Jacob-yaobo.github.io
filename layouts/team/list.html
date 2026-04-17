@@ -9,7 +9,7 @@
         {{ if .Params.photo }}
         <img src="{{ .Params.photo }}" alt="{{ .Title }}" class="team-photo">
         {{ else }}
-        <div class="team-photo-placeholder">{{ substr .Title 0 1 }}</div>
+        <div class="team-photo-placeholder">{{ .Params.initial | default (substr .Title 0 1) }}</div>
         {{ end }}
         <h3>{{ .Title }}</h3>
         <p class="team-role">{{ .Params.role }}</p>
@@ -29,33 +29,88 @@
       {{ end }}
     </div>
     {{ with .Params.collaborators }}
+    {{ $collaborators := . }}
+    {{ $affiliations := slice }}
+    {{ range $collaborators }}
+    {{ $aff := .affiliation | default "Other" }}
+    {{ if not (in $affiliations $aff) }}
+    {{ $affiliations = $affiliations | append $aff }}
+    {{ end }}
+    {{ end }}
     <div class="team-subsection">
       <h2 class="section-title team-subsection-title">Collaborators</h2>
-      <div class="collaborator-grid">
-        {{ range . }}
-        <div class="team-card">
-          {{ if .photo }}
-          <img src="{{ .photo }}" alt="{{ .name }}" class="team-photo">
-          {{ else }}
-          <div class="team-photo-placeholder">{{ substr .name 0 1 }}</div>
+      {{ range $aff := $affiliations }}
+      <div class="collaborator-group">
+        <h3 class="collaborator-group-title">{{ $aff }}</h3>
+        {{ if eq $aff "Medical University of Vienna" }}
+          {{/* MUW: two-level — sub-group by center */}}
+          {{ $muw_centers := slice }}
+          {{ range $collaborators }}
+          {{ if eq (.affiliation | default "Other") $aff }}
+          {{ $c := .center | default "Other" }}
+          {{ if not (in $muw_centers $c) }}{{ $muw_centers = $muw_centers | append $c }}{{ end }}
           {{ end }}
-          <h3>{{ .name }}</h3>
-          <p class="team-role">{{ .role | default "Collaborator" }}</p>
-          {{ $emails := .emails | default (slice) }}
-          {{ if and (eq (len $emails) 0) .email }}
-          {{ $emails = slice .email }}
           {{ end }}
-          {{ if gt (len $emails) 0 }}
-          <p class="team-email">
-            {{ range $index, $email := $emails }}
-            {{ if gt $index 0 }}<br>{{ end }}
-            <a href="mailto:{{ $email }}">{{ $email }}</a>
+          {{ range $c := $muw_centers }}
+          <div class="collaborator-subgroup">
+            <h4 class="collaborator-subgroup-title">{{ $c }}</h4>
+            <div class="collaborator-grid">
+            {{ range $collaborators }}
+            {{ if and (eq (.affiliation | default "Other") $aff) (eq (.center | default "Other") $c) }}
+            <div class="team-card">
+              {{ if .photo }}
+              <img src="{{ .photo }}" alt="{{ .name }}" class="team-photo">
+              {{ else }}
+              <div class="team-photo-placeholder">{{ .initial | default (substr .name 0 1) }}</div>
+              {{ end }}
+              <h3>{{ .name }}</h3>
+              <p class="team-role">{{ .role | default "Collaborator" }}</p>
+              {{ $emails := .emails | default (slice) }}
+              {{ if and (eq (len $emails) 0) .email }}{{ $emails = slice .email }}{{ end }}
+              {{ if gt (len $emails) 0 }}
+              <p class="team-email">
+                {{ range $index, $email := $emails }}
+                {{ if gt $index 0 }}<br>{{ end }}
+                <a href="mailto:{{ $email }}">{{ $email }}</a>
+                {{ end }}
+              </p>
+              {{ end }}
+            </div>
             {{ end }}
-          </p>
+            {{ end }}
+            </div>
+          </div>
           {{ end }}
-        </div>
+        {{ else }}
+          {{/* External: flat grid, no sub-grouping */}}
+          <div class="collaborator-grid">
+          {{ range $collaborators }}
+          {{ if eq (.affiliation | default "Other") $aff }}
+          <div class="team-card">
+            {{ if .photo }}
+            <img src="{{ .photo }}" alt="{{ .name }}" class="team-photo">
+            {{ else }}
+            <div class="team-photo-placeholder">{{ .initial | default (substr .name 0 1) }}</div>
+            {{ end }}
+            <h3>{{ .name }}</h3>
+            <p class="team-role">{{ .role | default "Collaborator" }}</p>
+            {{ $emails := .emails | default (slice) }}
+            {{ if and (eq (len $emails) 0) .email }}{{ $emails = slice .email }}{{ end }}
+            {{ if gt (len $emails) 0 }}
+            <p class="team-email">
+              {{ range $index, $email := $emails }}
+              {{ if gt $index 0 }}<br>{{ end }}
+              <a href="mailto:{{ $email }}">{{ $email }}</a>
+              {{ end }}
+            </p>
+            {{ end }}
+          </div>
+          {{ end }}
+          {{ end }}
+          </div>
         {{ end }}
       </div>
+      {{ end }}
     </div>
     {{ end }}
   </div>

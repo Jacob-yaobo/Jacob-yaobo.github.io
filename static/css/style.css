@@ -109,8 +109,27 @@ img { max-width: 100%; display: block; }
 /* === Team === */
 .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
 .team-subsection { margin-top: 3rem; }
-.team-subsection-title { margin-bottom: 1.5rem; text-align: left; }
-.collaborator-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.team-subsection-title { margin-bottom: 2rem; text-align: center; }
+.collaborator-group { padding: 1.5rem 0; border-top: 1px solid var(--c-border); }
+.collaborator-group:last-child { border-bottom: 1px solid var(--c-border); }
+.collaborator-group-title {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-primary);
+  text-align: center;
+}
+.collaborator-subgroup { margin-bottom: 1.5rem; }
+.collaborator-subgroup-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--c-text-muted);
+  text-align: center;
+  margin-bottom: 0.85rem;
+  font-style: italic;
+}
+.collaborator-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+.collaborator-grid .team-card { width: 210px; flex-shrink: 0; }
 .team-card { text-align: center; padding: 1.5rem; border: 1px solid var(--c-border); border-radius: var(--radius); background: white; min-width: 0; }
 .team-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; }
 .team-photo-placeholder {
@@ -118,8 +137,16 @@ img { max-width: 100%; display: block; }
   background: var(--c-primary-light); color: var(--c-primary);
   display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700;
 }
-.team-card h3 { font-size: 1rem; margin-bottom: 0.25rem; }
-.team-role { font-size: 0.85rem; color: var(--c-text-muted); margin-bottom: 0.25rem; }
+.team-card h3 { font-size: 1rem; margin-bottom: 0.2rem; }
+.team-center { font-size: 0.82rem; font-weight: 600; color: var(--c-primary); margin-bottom: 0.2rem; }
+.team-role { font-size: 0.82rem; color: var(--c-text-muted); margin-bottom: 0.25rem; }
+.team-affiliation {
+  font-size: 0.82rem;
+  color: var(--c-text-muted);
+  line-height: 1.45;
+  margin: 0 auto 0.5rem;
+  max-width: 28ch;
+}
 .team-email {
   font-size: 0.8rem;
   line-height: 1.5;
@@ -280,7 +307,7 @@ img { max-width: 100%; display: block; }
   .nav-link { padding: 0.6rem 0.75rem; }
   .card-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
-  .collaborator-grid { grid-template-columns: repeat(2, 1fr); }
+  .collaborator-grid .team-card { width: 160px; }
   .pub-venues-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
   .journal-card { --journal-shift: 0px; }
   .journal-card--hero,
