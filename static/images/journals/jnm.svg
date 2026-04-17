@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <rect width="240" height="80" fill="white"/>
+  <!-- Blue left accent bar -->
+  <rect x="0" y="0" width="5" height="80" fill="#1B4F8A"/>
+  <!-- JNM large bold text -->
+  <text x="20" y="50" font-family="Arial Black, Arial, sans-serif" font-size="42" font-weight="900" fill="#1B4F8A" letter-spacing="3">JNM</text>
+  <!-- Tagline -->
+  <text x="20" y="68" font-family="Arial, Helvetica, sans-serif" font-size="8.5" fill="#555555">The Journal of Nuclear Medicine</text>
+</svg>

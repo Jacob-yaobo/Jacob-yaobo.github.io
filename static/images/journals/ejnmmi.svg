@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <rect width="320" height="80" fill="white"/>
+  <!-- Orange accent bar top -->
+  <rect x="0" y="0" width="320" height="4" fill="#E8501A"/>
+  <!-- EJNMMI large text -->
+  <text x="16" y="38" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="bold" fill="#1A3A5C" letter-spacing="2">EJNMMI</text>
+  <!-- Full name -->
+  <text x="16" y="54" font-family="Arial, Helvetica, sans-serif" font-size="9.5" fill="#444444">European Journal of Nuclear Medicine</text>
+  <text x="16" y="66" font-family="Arial, Helvetica, sans-serif" font-size="9.5" fill="#444444">and Molecular Imaging</text>
+  <!-- Springer logo area -->
+  <text x="278" y="74" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#E8501A" font-weight="bold">springer</text>
+</svg>

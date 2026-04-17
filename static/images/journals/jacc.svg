@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <rect width="240" height="80" fill="white"/>
+  <!-- Circular seal -->
+  <circle cx="36" cy="40" r="28" fill="#1B3A6B" stroke="#1B3A6B" stroke-width="1"/>
+  <circle cx="36" cy="40" r="24" fill="none" stroke="#C8A951" stroke-width="1.5"/>
+  <circle cx="36" cy="40" r="19" fill="none" stroke="#C8A951" stroke-width="0.8"/>
+  <!-- ACC text in seal -->
+  <text x="36" y="37" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#C8A951" text-anchor="middle">ACC</text>
+  <text x="36" y="48" font-family="Arial, Helvetica, sans-serif" font-size="5.5" fill="#C8A951" text-anchor="middle">EST. 1949</text>
+  <!-- JACC text -->
+  <text x="76" y="34" font-family="Arial Black, Arial, sans-serif" font-size="26" font-weight="900" fill="#1B3A6B" letter-spacing="2">JACC</text>
+  <!-- Subtitle -->
+  <text x="76" y="50" font-family="Arial, Helvetica, sans-serif" font-size="7.5" fill="#444444">Journal of the American</text>
+  <text x="76" y="62" font-family="Arial, Helvetica, sans-serif" font-size="7.5" fill="#444444">College of Cardiology</text>
+</svg>
