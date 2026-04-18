@@ -279,6 +279,8 @@ img { max-width: 100%; display: block; }
 .status-live { background: #d1fae5; color: #065f46; }
 .status-beta { background: #fef3c7; color: #92400e; }
 .status-coming { background: #e0e7ff; color: #3730a3; }
+.tool-access-links { display: flex; flex-direction: column; gap: 0.85rem; margin: 1.5rem 0 2rem; }
+.tool-access-links .btn { justify-content: center; }
 
 /* === Research === */
 .research-detail-shell {

@@ -5,9 +5,9 @@
     <p class="page-desc">Research tools and applications developed by our lab.</p>
     {{ .Content }}
     <div class="tools-grid">
-      {{ range .Pages }}
-      <a href="{{ if .Params.url }}{{ .Params.url }}{{ else }}{{ .Permalink }}{{ end }}" 
-         class="tool-card" {{ if .Params.url }}target="_blank"{{ end }}>
+      {{ range .Pages.ByWeight }}
+      <a href="{{ if .Params.external_url }}{{ .Params.external_url }}{{ else }}{{ .Permalink }}{{ end }}" 
+         class="tool-card" {{ if .Params.external_url }}target="_blank" rel="noreferrer"{{ end }}>
         <div class="tool-icon">{{ .Params.icon | default "🔬" }}</div>
         <h3>{{ .Title }}</h3>
         <p>{{ .Params.summary | default .Summary }}</p>

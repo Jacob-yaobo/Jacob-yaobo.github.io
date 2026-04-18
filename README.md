@@ -95,10 +95,19 @@ title: "Tool Name"
 summary: "One-line description."
 icon: "🤖"
 status: "live"       # live | beta | coming
-url: "https://..."   # external link (leave empty for internal page)
+external_url: "https://..."   # optional external link; omit for internal page
 ---
 
 Optional longer description here (Markdown).
+```
+
+For tools with multiple possible access points, omit `external_url` and add an `external_urls` list instead:
+```yaml
+external_urls:
+  - label: "Access Route 1"
+    url: "http://100.100.87.79:8000/login"
+  - label: "Access Route 2"
+    url: "http://100.116.163.47/login"
 ```
 
 ### Add a news post

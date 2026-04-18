@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="section page-section">
+  <div class="container container-narrow">
+    <article>
+      <h1 class="page-title">{{ .Title }}</h1>
+      {{ if and .Params.summary (not .Params.hide_summary_on_single) }}<p class="page-desc">{{ .Params.summary }}</p>{{ end }}
+      {{ if .Params.status }}
+      <div class="tags">
+        <span class="tool-status status-{{ .Params.status }}">{{ .Params.status }}</span>
+      </div>
+      {{ end }}
+      {{ if .Params.external_urls }}
+      <div class="tool-access-links">
+        {{ range .Params.external_urls }}
+        <a href="{{ .url }}" class="btn btn-outline" target="_blank" rel="noreferrer">{{ .label }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+      <div class="content">
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
+</section>
+{{ end }}
