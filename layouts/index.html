@@ -41,7 +41,8 @@
       <article class="post-card">
         <time class="post-date">{{ .Date.Format "Jan 2, 2006" }}</time>
         <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-        <p>{{ .Summary | truncate 120 }}</p>
+        {{ if .Params.summary }}<p>{{ .Params.summary }}</p>
+        {{ else }}<p>{{ .Summary | plainify | truncate 120 }}</p>{{ end }}
       </article>
       {{ end }}
     </div>
